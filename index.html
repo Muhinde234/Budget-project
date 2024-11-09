@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Budget Management App - ZIGAMA</title>
+    <link rel="stylesheet" href="asset/css/styles.css">
+</head>
+
+<body>
+    <div class="page-wrapper">
+        <div class="container">
+            <header>
+                <h1>ZIGAMA APP</h1>
+                <p>Manage Your Monthly Budget with Ease</p>
+            </header>
+
+            <section class="budget-card">
+                <h2>Set Your Budget</h2>
+                <div class="input-group">
+                    <input type="number" id="total-budget" placeholder="Enter Total Budget" min="0" />
+                    <button id="set-budget">Set Budget</button>
+                </div>
+                <div class="summary">
+                    <div class="summary-card">
+                        <p>Total Budget:</p>
+                        <span id="budget-amount">$0.00</span>
+                    </div>
+                    <div class="summary-card">
+                        <p>Total Expenses:</p>
+                        <span id="expense-amount-total">$0.00</span>
+                    </div>
+                    <div class="summary-card remaining">
+                        <h3>Remaining:</h3>
+                        <span id="total-remaining">$0.00</span>
+                    </div>
+                </div>
+                <div class="progress-bar">
+                    <div id="progress" class="progress"></div>
+                </div>
+            </section>
+
+            <section class="expense-list-card">
+                <h2>Expenses</h2>
+                <button id="add-expense-btn" onclick="toggleModal()">Add Expense</button>
+                <ul id="expense-list"></ul>
+            </section>
+
+            <!-- Modal for Adding Expense -->
+            <div id="expense-modal" class="modal">
+                <div class="modal-content">
+                    <span class="close" onclick="toggleModal()">&times;</span>
+                    <h2>Add New Expense</h2>
+                    <input type="text" id="expense-name" placeholder="Expense Name" />
+                    <input type="number" id="expense-amount" placeholder="Amount" min="0" />
+                    <button id="add-expense" onclick="addExpense()">Add Expense</button>
+                </div>
+            </div>
+        </div>
+
+        <footer>
+            <p>&copy; 2024 ZIGAMA - Budget Management App</p>
+        </footer>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+
+</html>
